@@ -287,7 +287,7 @@ public struct ByteBuffer {
     
     // MARK: - Helpers
     
-    static func toByteArray<T>(_ value: T) -> [UInt8] {
+    public static func toByteArray<T>(_ value: T) -> [UInt8] {
         var value = value
         return withUnsafePointer(to: &value) {
             $0.withMemoryRebound(to: UInt8.self, capacity: MemoryLayout<T>.size) {
